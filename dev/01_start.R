@@ -20,11 +20,11 @@
 ##
 golem::fill_desc(
   pkg_name = "epimutacionsShiny", # The Name of the package containing the App
-  pkg_title = "PKG_TITLE", # The Title of the package containing the App
-  pkg_description = "PKG_DESC.", # The Description of the package containing the App
-  author_first_name = "AUTHOR_FIRST", # Your First Name
-  author_last_name = "AUTHOR_LAST", # Your Last Name
-  author_email = "AUTHOR@MAIL.COM", # Your Email
+  pkg_title = "epimutacionsShiny", # The Title of the package containing the App
+  pkg_description = "Shiny app for the epimutacions package.", # The Description of the package containing the App
+  author_first_name = "Xavier", # Your First Name
+  author_last_name = "Escribà Montagut", # Your Last Name
+  author_email = "xavier.escriba@isglobal.org", # Your Email
   repo_url = NULL # The URL of the GitHub Repo (optional)
 )
 

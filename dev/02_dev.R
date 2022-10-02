@@ -14,18 +14,46 @@
 # Engineering
 
 ## Dependencies ----
-## Amend DESCRIPTION with dependencies read from package code parsing
-attachment::att_amend_desc()
+usethis::use_package( "epimutacionsData" )
+usethis::use_package( "minfi" )
+usethis::use_package( "Rsamtools" )
+usethis::use_package( "epimutacions" )
+usethis::use_package( "ensembldb" )
+usethis::use_package( "Gviz" )
+usethis::use_package( "shinycssloaders" )
+usethis::use_package( "shinyWidgets" )
+usethis::use_package( "TxDb.Hsapiens.UCSC.hg19.knownGene" )
+usethis::use_package( "TxDb.Hsapiens.UCSC.hg38.knownGene" )
+usethis::use_package( "TxDb.Hsapiens.UCSC.hg18.knownGene" )
+usethis::use_package( "IlluminaHumanMethylation450kmanifest" )
+usethis::use_package( "IlluminaHumanMethylationEPICmanifest" )
+usethis::use_package( "IlluminaHumanMethylation450kanno.ilmn12.hg19" )
+usethis::use_package( "AnnotationDbi" )
+usethis::use_package( "Homo.sapiens" )
+usethis::use_package( "cowplot" )
+usethis::use_package( "shinyjs" )
+usethis::use_package( "AnnotationHub" )
+usethis::use_package( "golem" )
+usethis::use_package( "shinydashboard" )
+usethis::use_package( "ExperimentHub" )
+usethis::use_package( "reshape2" )
+usethis::use_package( "ggrepel" )
 
 ## Add modules ----
 ## Create a module infrastructure in R/
-golem::add_module(name = "name_of_module1", with_test = TRUE) # Name of the module
-golem::add_module(name = "name_of_module2", with_test = TRUE) # Name of the module
+golem::add_module(name = "data_selection", with_test = TRUE) # Name of the module
+golem::add_module(name = "pre_process", with_test = TRUE) # Name of the module
+golem::add_module(name = "epimut", with_test = TRUE) # Name of the module
+golem::add_module(name = "epimut_viz", with_test = TRUE) # Name of the module
+golem::add_module(name = "aknowledgements", with_test = TRUE) # Name of the module
+golem::add_module(name = "home", with_test = TRUE) # Name of the module
+golem::add_module(name = "mod_epimut_ui_module_ui", with_test = TRUE) # Name of the module
 
 ## Add helper functions ----
 ## Creates fct_* and utils_*
 golem::add_fct("helpers", with_test = TRUE)
-golem::add_utils("helpers", with_test = TRUE)
+golem::add_utils("data", with_test = TRUE)
+golem::add_utils("layout", with_test = TRUE)
 
 ## External resources
 ## Creates .js and .css files at inst/app/www

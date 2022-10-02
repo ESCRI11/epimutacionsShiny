@@ -6,12 +6,25 @@
 #' @noRd
 app_ui <- function(request) {
   tagList(
+    shinyjs::extendShinyjs(text = jscode_tab, functions = c("enableTab", "disableTab", "disableTabItem", "enableTabItem")),
+    shinyjs::useShinyjs(debug = T),
+    
+    tags$script(src="shinycssloaders/spinner.js"),
+    tags$link(rel = "stylesheet", href = 'shinycssloaders/spinner.css'),
+    tags$link(rel = "stylesheet", href = 'shinycssloaders/css-loaders.css'),
+    
     # Leave this function for adding external resources
     golem_add_external_resources(),
     # Your application UI logic
-    fluidPage(
-      h1("epimutacionsShiny")
+    shinydashboard::dashboardPage(
+      header,
+      sidebar,
+      body
     )
+    
+    # fluidPage(
+    #   h1("epimutacionsShiny")
+    # )
   )
 }
 
@@ -27,14 +40,25 @@ golem_add_external_resources <- function() {
   add_resource_path(
     "www",
     app_sys("app/www")
+    
+  )
+  
+  addResourcePath(
+    "shinyWidgets",
+    system.file("assets", package = "shinyWidgets")
   )
 
+  addResourcePath(
+    "shinycssloaders",
+    system.file("assets", package = "shinycssloaders")
+  )
+  
   tags$head(
     favicon(),
     bundle_resources(
       path = app_sys("app/www"),
       app_title = "epimutacionsShiny"
-    )
+    ),
     # Add here other external resources
     # for example, you can add shinyalert::useShinyalert()
   )
